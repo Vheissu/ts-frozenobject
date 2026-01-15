@@ -1,3 +1,9 @@
+/**
+ * @author Dwayne Charrington <dwaynecharrington@gmail.com>
+ * 10 Jan 2026
+ * FrozenObject<T>
+ */
+
 type FrozenArray<T extends readonly any[]> = number extends T['length']
   ? Array<FrozenObject<T[number]>>
   : { [K in keyof T]: FrozenObject<T[K]> };
